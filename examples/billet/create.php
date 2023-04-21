@@ -28,4 +28,7 @@ $efi->setMetadata($metadata);
 $efi->setItems($items);
 $efi->setCustomer($customer);
 $efi->setConfigurations(200, 33);
-$chargeData = $efi->createOneStepCharge(date('Y-m-d', strtotime('+2 days')), 'Boleto Gerado Por Lib EfiBankBillet');
+
+$expireAt = '2023-04-21'; // Data no formato YYYY-MM-DD
+$message = 'Your message here.';
+$chargeData = $efi->createOneStepCharge($expireAt, $message);

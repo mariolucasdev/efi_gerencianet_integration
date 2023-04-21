@@ -4,9 +4,13 @@ require __DIR__ . "/../../constants.php";
 
 $efi = new App\EfiBankBillet(HOMO_CLIENT_ID, HOMO_CLIENT_SECRET, true);
 
+$chargeId = '';
+$newCustomId = '';
+$newNotificationUrl = '';
+
 $metadata = array(
-    "custom_id" => "Order_00001",
-    "notification_url" => "https://your-domain.com.br/notification/"
+    "custom_id" => $newCustomId,
+    "notification_url" => $newNotificationUrl
 );
 
-$efi->updateChargeMetada($chargeData['data']['charge_id'], $metadata);
+$efi->updateChargeMetada($chargeId, $metadata);
