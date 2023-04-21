@@ -2,7 +2,7 @@
 require __DIR__ . "/../../vendor/autoload.php";
 require __DIR__ . "/../../constants.php";
 
-$efi = new App\EfiBankBillet(HOMO_CLIENT_ID, HOMO_CLIENT_SECRET, true);
+$efi = new App\EfiBankBillet(SANDBOX_CLIENT_ID, SANDBOX_CLIENT_SECRET, true);
 
 $chargeId = '';
 $newCustomId = '';

@@ -4,5 +4,5 @@ require __DIR__ . "/../../constants.php";
 
 $chargeId = '';
 
-$efi = new App\EfiBankBillet(HOMO_CLIENT_ID, HOMO_CLIENT_SECRET, true);
+$efi = new App\EfiBankBillet(SANDBOX_CLIENT_ID, SANDBOX_CLIENT_SECRET, true);
 $efi->cancelCharge($chargeId);

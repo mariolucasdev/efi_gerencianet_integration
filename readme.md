@@ -1,4 +1,4 @@
-# Biblioteca de Integração Simplificada para o Efí - Gerencianet
+# Emissão de Boleto com Efí - Gerencianet
 
 Faça o donwload do pacote ou instale via composer:
 
@@ -26,8 +26,8 @@ define('CLIENT_ID', '');
 define('CLIENT_SECRET', '');
 
 // Credenciais para ambiente de homologação
-define('HOMO_CLIENT_ID', '');
-define('HOMO_CLIENT_SECRET', '');
+define('SANDBOX_CLIENT_ID', '');
+define('SANDBOX_CLIENT_SECRET', '');
 ```
 
 ## Utilização
@@ -121,4 +121,3 @@ $metadata = array(
 // retornará true ou mensagem de excessão.
 $efi->updateChargeMetada($chargeId, $metadata);
 ```
-
