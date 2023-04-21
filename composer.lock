@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e4307ae0ce11de92a819e5c57b924400",
+    "content-hash": "313ab2818e363ce195e61419bf1272d0",
     "packages": [
         {
             "name": "gerencianet/gerencianet-sdk-php",

@@ -1,7 +1,10 @@
 {
-    "name": "mariolucasdev/integrador-efi",
+    "name": "mariolucasdev/efi_gerencianet_integration",
     "description": "Integration With Efi Payments",
     "homepage": "https://github.com/mariolucasdev/efi_gerencianet_integration",
+    "keywords": [
+		"Emissão de boleto bancário", "boleto", "gerencianet", "efi", "boleto com gerencianet", "emissão de boleto"
+	],
     "autoload": {
         "psr-4": {
             "App\\": "src/"
