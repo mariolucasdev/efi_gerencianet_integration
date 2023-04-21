@@ -1,31 +1,38 @@
 # Biblioteca de Integração Simplificada para o Efí - Gerencianet
 
-Para inicar a integração será necessário ter um arquivo chamado constants.php
-na raíz da pasta contenta as seguintes configurações de contantes.
+Faça o donwload do pacote ou instale via composer:
+
+```
+composer require mariolucasdev/efi_gerencianet_integration
+```
+
+Instale as dependências:
+
+```
+composer install
+```
+
+## Credenciais, Certificado e Autorização
+
+Para ter acesso as suas chaves de identificação de Produção e Homologação, basta seguir as intruções no site da do próprio Gerencianet:
+
+https://dev.gerencianet.com.br/docs/api-pix-autenticacao-e-seguranca
+
+Com sua credenciais geradas crie um arquivo chamado _contants.php_ com as seguintes configurações.
 
 ```php
+// Credenciais para ambiente de produção
 define('CLIENT_ID', '');
 define('CLIENT_SECRET', '');
 
+// Credenciais para ambiente de homologação
 define('HOMO_CLIENT_ID', '');
 define('HOMO_CLIENT_SECRET', '');
 ```
 
-Para ter acesso as suas chaves de identificação de Produção e Homologação, basta seguir as intruções no site da do próprio Gerencianet:
+## Utilização
 
-## Credenciais, Certificado e Autorização
-
-https://dev.gerencianet.com.br/docs/api-pix-autenticacao-e-seguranca
-
-## Utilizando a Biblioteca de Boletos
-
-Antes de tudo faça a instação das dependências utilizando o composer:
-
-```
-composer intall
-```
-
-No arquivo onde você irá gerar o boleto, carregue o autoload, seu arquivo onde contém suas credenciais e instancie a class EfiBankBillet passando o CLIENT_ID, CLIENT_SECRETE e o ambiente.
+Carregue o autoload e seu arquivo _contants.php_ que contém suas credenciais.
 
 Obs.: Para ambiente de Homologação utilize o 3º parâmetro como true ou false, para produção.
 
@@ -102,17 +109,16 @@ require __DIR__ . "/../../constants.php";
 
 $efi = new App\EfiBankBillet(HOMO_CLIENT_ID, HOMO_CLIENT_SECRET, true);
 
+// Você precisará do charge_id da cobrança.
+$chargeId = '';
+
 // Os metados poderão ser alterados aqui
 $metadata = array(
-    "custom_id" => "Order_00001",
-    "notification_url" => "https://your-domain.com.br/notification/"
+    "custom_id" => "new_custom_id_8387",
+    "notification_url" => "https://new-domain.com.br/notification/"
 );
 
-$efi->updateChargeMetada($chargeData['data']['charge_id'], $metadata);
+// retornará true ou mensagem de excessão.
+$efi->updateChargeMetada($chargeId, $metadata);
 ```
-Caso seja bem sucessedida a requisição, deverá ter um retorno semelhante ao código a baixo:
-```
-{
-  "code": 200 // retorno HTTP "200" informando que o pedido foi bem sucedido
-}
-```
+
