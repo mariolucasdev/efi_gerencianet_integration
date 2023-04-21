@@ -40,7 +40,7 @@ Obs.: Para ambiente de Homologação utilize o 3º parâmetro como true ou false
 require __DIR__ . "/../../vendor/autoload.php";
 require __DIR__ . "/../../constants.php";
 
-$efi = new App\EfiBankBillet(HOMO_CLIENT_ID, HOMO_CLIENT_SECRET, true);
+$efi = new App\EfiBankBillet(SANDBOX_CLIENT_ID, SANDBOX_CLIENT_SECRET, true);
 ```
 
 # Gerando o Boleto
@@ -66,7 +66,7 @@ $customer = array(
     // "email" => "seucliente@email.com"
 );
 
-$efi = new App\EfiBankBillet(HOMO_CLIENT_ID, HOMO_CLIENT_SECRET, true);
+$efi = new App\EfiBankBillet(SANDBOX_CLIENT_ID, SANDBOX_CLIENT_SECRET, true);
 $efi->setMetadata($metadata);
 $efi->setItems($items);
 $efi->setCustomer($customer);
@@ -107,7 +107,7 @@ Se correr tudo bem com o envio, você terá dados de resposta semelhante ao exem
 require __DIR__ . "/../../vendor/autoload.php";
 require __DIR__ . "/../../constants.php";
 
-$efi = new App\EfiBankBillet(HOMO_CLIENT_ID, HOMO_CLIENT_SECRET, true);
+$efi = new App\EfiBankBillet(SANDBOX_CLIENT_ID, SANDBOX_CLIENT_SECRET, true);
 
 // Você precisará do charge_id da cobrança.
 $chargeId = '';
