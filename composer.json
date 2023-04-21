@@ -1,0 +1,19 @@
+{
+    "name": "mariolucasdev/integrador-efi",
+    "description": "Integration With Efi Payments",
+    "homepage": "https://github.com/mariolucasdev/efi_gerencianet_integration",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mário Lucas",
+            "email": "mariolucasdev@gmail.com"
+        }
+    ],
+    "require": {
+        "gerencianet/gerencianet-sdk-php": "^5.1"
+    }
+}
